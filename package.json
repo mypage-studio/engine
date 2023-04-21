@@ -1,0 +1,7 @@
+{
+  "name": "@mypage-studio/engine",
+  "module": "index.ts",
+  "type": "module",
+  "dependencies": {},
+  "devDependencies": { "vite": "^4.3.1" }
+}

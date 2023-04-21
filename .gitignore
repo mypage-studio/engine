@@ -1,0 +1,7 @@
+# directories
+node_modules/
+.idea/
+.dist/
+
+# files
+bun.lockb
