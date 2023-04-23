@@ -1,0 +1,7 @@
+<svelte:options tag={null}/>
+
+<p>&lt;mp-typo-heading/></p>
+
+<script lang="ts"></script>
+
+<style lang="scss"></style>

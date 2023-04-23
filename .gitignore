@@ -1,7 +1,10 @@
 # directories
 node_modules/
 .idea/
-.dist/
+dist/
+libs/*
+!src/libs/*
 
 # files
 bun.lockb
+.env.local
