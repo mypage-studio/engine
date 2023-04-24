@@ -1,15 +1,14 @@
 {
   "name": "@mypage-studio/engine",
-  "module": "index.ts",
-  "type": "module",
   "license": "MIT",
   "repository": "https://github.com/mypage-studio/engine.git",
   "author": "redgoose <scripter@me.com>",
   "scripts": {
-    "dev": "vite -c=./scripts/vite.config.ts",
-    "build": "vite build -c=./scripts/vite.config.ts",
-    "start": "vite preview -c=./scripts/vite.config.ts",
-    "build:libs": "vite build -c=./scripts/vite.libs.config.ts"
+    "dev": "vite -c=./scripts/vite.config.js",
+    "build": "vite build -c=./scripts/vite.config.js",
+    "start": "vite preview -c=./scripts/vite.config.js",
+    "build:wc": "vite build -c=./scripts/vite.lib.config.js",
+    "build:svelte": "vite build -c=./scripts/vite.svelte.config.js"
   },
   "engines": {
     "node": "16.x || 20.x"
@@ -18,15 +17,14 @@
     "> 1%",
     "last 2 versions"
   ],
+  "type": "module",
+  "main": "./lib/main.js",
   "dependencies": {},
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.1.0",
-    "@tsconfig/svelte": "^4.0.1",
-    "@types/node": "^18.15.13",
     "sass": "^1.62.0",
     "svelte": "^3.58.0",
     "svelte-preprocess": "^5.0.3",
-    "typescript": "^5.0.4",
     "vite": "^4.3.1"
   }
 }

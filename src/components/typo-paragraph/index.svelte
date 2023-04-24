@@ -1,7 +1,7 @@
 <svelte:options tag={null}/>
 
-<p>&lt;mp-typo-paragraph/></p>
+<p>.mypage-typo-paragraph</p>
 
-<script lang="ts"></script>
+<script></script>
 
 <style lang="scss"></style>

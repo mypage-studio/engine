@@ -3,33 +3,36 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 import preprocess from 'svelte-preprocess'
 import components from '../src/components/index'
 
-export default defineConfig((): any => {
-  const entries: string[] = components.names.map((o) => (`./src/components/${o}/${o}.svelte`))
+export default defineConfig(({}) => {
+  const entries = components.names.map((o) => (`./src/components/${o}/${o}.svelte`))
   return {
     publicDir: false,
     build: {
       lib: {
         entry: [
-          './src/libs.ts',
           ...entries,
+          './src/lib.js',
+          './src/wc.js',
         ],
         formats: [ 'es' ],
-        name: 'MypageEngine',
-        fileName: (_, entryName): string => {
+        name: 'MypageStudioEngine',
+        fileName: (_, entryName, c) => {
           switch (entryName) {
-            case 'libs':
-              return 'libs.js'
+            case 'lib':
+              return 'main.js'
+            case 'wc':
+              return 'wc.js'
             default:
               return `wc/${entryName}.js`
           }
         },
       },
-      outDir: './libs',
+      outDir: './lib',
       rollupOptions: {
         output: {
           inlineDynamicImports: false,
           preserveModules: false,
-          chunkFileNames: (o): string => {
+          chunkFileNames: (o) => {
             return '[name].js'
           },
           manualChunks: {
@@ -51,7 +54,7 @@ export default defineConfig((): any => {
         compilerOptions: {
           customElement: true,
         },
-      })
+      }),
     ],
   }
 })

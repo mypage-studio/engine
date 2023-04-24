@@ -2,6 +2,6 @@
 
 <p>&lt;mp-typo-heading/></p>
 
-<script lang="ts"></script>
+<script></script>
 
 <style lang="scss"></style>
