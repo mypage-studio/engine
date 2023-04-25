@@ -7,8 +7,7 @@
     "dev": "vite -c=./scripts/vite.config.js",
     "build": "vite build -c=./scripts/vite.config.js",
     "start": "vite preview -c=./scripts/vite.config.js",
-    "build:wc": "vite build -c=./scripts/vite.lib.config.js",
-    "build:svelte": "vite build -c=./scripts/vite.svelte.config.js"
+    "build:lib": "vite build -c=./scripts/vite.lib.config.js"
   },
   "engines": {
     "node": "16.x || 20.x"
@@ -19,6 +18,10 @@
   ],
   "type": "module",
   "main": "./lib/main.js",
+  "exports": {
+    ".": "./lib/main.js",
+    "./components/*": "./lib/components/*"
+  },
   "dependencies": {},
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.1.0",

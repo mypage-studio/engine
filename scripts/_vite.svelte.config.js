@@ -10,11 +10,12 @@ export default defineConfig(({}) => {
     build: {
       lib: {
         entry: entries,
-        formats: [ 'esm' ],
+        formats: [ 'es' ],
         name: 'MypageStudioEngine',
       },
       outDir: './lib/svelte',
       rollupOptions: {
+        // input: entries,
         output: {
           inlineDynamicImports: false,
           preserveModules: false,
@@ -24,7 +25,7 @@ export default defineConfig(({}) => {
           entryFileNames: o => {
             const regex = /\/src\/components\/(.*?)\/index.svelte/
             const id = o.facadeModuleId.match(regex)[1]
-            return id ? `${id}.js` : '[name].js'
+            return id ? `components/${id}.js` : '[name].js'
           },
           chunkFileNames: (o) => {
             return '[name].vendor.js'
@@ -38,10 +39,11 @@ export default defineConfig(({}) => {
     plugins: [
       svelte({
         preprocess: preprocess({}),
-        include: 'src/components/**/*.svelte',
-        compilerOptions: {
-          customElement: false,
-        },
+        // include: 'src/components/**/*.svelte',
+        // compilerOptions: {
+        //   customElement: false,
+        // },
+        emitCss: false,
       }),
     ],
   }

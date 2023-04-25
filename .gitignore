@@ -1,6 +1,9 @@
 # directories
 node_modules/
 .idea/
+lib/*
+!src/lib/*
+
 
 # files
 bun.lockb

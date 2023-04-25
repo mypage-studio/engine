@@ -1,6 +1,6 @@
 <svelte:options tag={null}/>
 
-<p>.mypage-typo-paragraph</p>
+<p>.mypage-typo-paragraph 123</p>
 
 <script></script>
 
